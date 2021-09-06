@@ -1,0 +1,28 @@
+print("####################################")
+print("Bem-vindo ao jogo de Advinhação")
+print("####################################")
+
+## versão com mais variáveis e código mais limpo
+n_secreto = 45
+total_tentativas = 3
+rodada = 1
+# laço . enquanto ainda há tentativas:
+while(rodada <= total_tentativas):
+    ##print("Tentativas: ", rodada, "de", total_tentativas)
+    print("Tentativas {} de {}".format(rodada, total_tentativas))
+    numero = int(input("Digite um número no intervalo de 1 a 50: "))
+    # do chute
+    acertou = numero == n_secreto
+    maior = numero > n_secreto
+    menor = numero < n_secreto
+
+    # logica
+    if(acertou):
+        print("Acertou")
+    else:
+        if(maior):
+            print("Digite um valor menor")
+        elif(menor):
+            print("Digite um valor maior")
+    rodada = rodada + 1
+print("valeu por tentar")
