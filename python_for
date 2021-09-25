@@ -1,0 +1,44 @@
+import random
+
+print("#####################################")
+print("## J O G O  DE A D V I N H A Ç Ã O ##")
+print("#####################################")
+
+n_secreto = random.randrange(1,101)
+t_tentativas = 0
+
+print("Selecione um nível de dificuldade:")
+print("(1) Fácil (2) Médio (3) Difícil")
+
+nivel = int(input("Escolha o nível: "))
+
+if(nivel == 1):
+    t_tentativas = 20
+elif(nivel == 2):
+    t_tentativas = 10
+else:
+    t_tentativas = 5
+#
+for rodada in range(1, t_tentativas +1):
+    print("Tentativa {} de {}".format(rodada, t_tentativas))
+    chute = int(input("Digite um número de 1 a 100: "))
+    if(chute < 1 or chute > 100):
+        print("Digite de 1 a 100.")
+        continue
+    acertou = chute == n_secreto
+    maior = chute > n_secreto
+    menor = chute < n_secreto
+    if(acertou):
+        print("Vc acertou! Fim")
+        break
+    else:
+        if(maior):
+            print("Numero MAIOR que Numero Secreto")
+        elif(menor):
+            print("Numero MENOR que Numero Secreto")
+print("PARABÉNS")
+
+
+
+
+
